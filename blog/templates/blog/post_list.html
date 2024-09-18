@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Adult Ballet for Beginners</title>
+        <title>Rebekah's First Blog</title>
     </head>
     <body>
         <header>
-            <h1><a href="/">Rebekah's Adult Ballet for Beginners Blog</a></h1>
+            <h1><a href="/">Rebekah's Random Assortment of Topics</a></h1>
         </header>
 
-        <article>
-            <time>published: 18.09.2024, 11:19</time>
-            <h2><a href="">Why you should consider starting ballet as an adult</a></h2>
-            <p>Ballet is an excellent hobby for people of all ages and ability levels.</p>
-        </article>
-
-        <article>
-            <time>published: 18.09.2024, 11:20</time>
-            <h2><a href="">Ballet class etiquette tips</a></h2>
-            <p>These tips will help you have a successful first experience in the studio.</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </body>
 </html>
